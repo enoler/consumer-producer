@@ -1,12 +1,20 @@
 package es.enoler.consumer_producer.models;
 
 import android.util.Log;
+import es.enoler.consumer_producer.activities.MainActivity;
 
 public class Producer extends Person {
 
 	private int producerActionTime;
 
 	public Producer() {
+		this.setId(0);
+		this.producerActionTime = 3000;
+		actionProducer();
+	}
+
+	public Producer(int id) {
+		this.setId(id);
 		this.producerActionTime = 3000;
 		actionProducer();
 	}
@@ -14,7 +22,8 @@ public class Producer extends Person {
 	private boolean actionProducer() {
 		return new android.os.Handler().postDelayed(new Runnable() {
 			public void run() {
-				Log.i("Test", "Adding item");
+				Log.d("Test", getId() + ": Adding item");
+				MainActivity.createItem(getId());
 				actionProducer();
 			}
 		}, producerActionTime);

@@ -2,12 +2,14 @@ package es.enoler.consumer_producer.activities;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import es.enoler.consumer_producer.R;
 import es.enoler.consumer_producer.models.Consumer;
+import es.enoler.consumer_producer.models.Item;
 import es.enoler.consumer_producer.models.Person;
 import es.enoler.consumer_producer.models.Producer;
 
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 	private Context mContext;
 	private ArrayList<Person> mConsumers;
 	private ArrayList<Person> mProducers;
-	private ArrayList<String> mItems;
+	private static ArrayList<Item> mItems;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
 		mContext = getApplicationContext();
 		initData();
 		initUI();
+	}
+
+	public static void createItem(int idProducer) {
+		if(mItems != null) {
+			int id = mItems.size() + 1;
+			String name = "Item " + id;
+			Item item = new Item(id, name, idProducer);
+			mItems.add(item);
+			Log.d("Test", item.getName());
+		}
 	}
 
 	private void initData() {
@@ -45,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
 		btProducer.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mProducers.add(new Producer());
+				int id = mProducers.size() + 1;
+				mProducers.add(new Producer(id));
 			}
 		});
 

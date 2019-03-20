@@ -14,7 +14,7 @@ public class Consumer extends Person {
 	private boolean actionConsumer() {
 		return new android.os.Handler().postDelayed(new Runnable() {
 			public void run() {
-				Log.i("Test", "Removing item");
+				Log.d("Test", "Removing item");
 				actionConsumer();
 			}
 		}, consumerActionTime);
