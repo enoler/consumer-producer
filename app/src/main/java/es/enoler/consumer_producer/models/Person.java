@@ -1,12 +1,9 @@
 package es.enoler.consumer_producer.models;
 
-import java.util.logging.Handler;
-
 public class Person {
 
 	private int id;
 	private String name;
-	private Handler timer;
 
 	public Person() { }
 
@@ -24,13 +21,5 @@ public class Person {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Handler getTimer() {
-		return timer;
-	}
-
-	public void setTimer(Handler timer) {
-		this.timer = timer;
 	}
 }
