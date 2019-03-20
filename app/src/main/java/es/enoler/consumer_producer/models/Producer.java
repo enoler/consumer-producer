@@ -4,9 +4,10 @@ import android.util.Log;
 
 public class Producer extends Person {
 
-	private int PRODUCER_ACTION_TIME = 3000;
+	private int producerActionTime;
 
 	public Producer() {
+		this.producerActionTime = 3000;
 		actionProducer();
 	}
 
@@ -16,6 +17,14 @@ public class Producer extends Person {
 				Log.i("Test", "Adding item");
 				actionProducer();
 			}
-		}, PRODUCER_ACTION_TIME);
+		}, producerActionTime);
+	}
+
+	public int getProducerActionTime() {
+		return producerActionTime;
+	}
+
+	public void setProducerActionTime(int producerActionTime) {
+		this.producerActionTime = producerActionTime;
 	}
 }
