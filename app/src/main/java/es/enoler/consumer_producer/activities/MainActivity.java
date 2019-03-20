@@ -69,4 +69,11 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 	}
+
+	public static void removeItem() {
+		if(mItems != null && mItems.size() > 0) {
+			mItems.remove(0);
+		}
+		Log.d("Test", "Items: " + mItems.size());
+	}
 }

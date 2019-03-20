@@ -1,6 +1,7 @@
 package es.enoler.consumer_producer.models;
 
 import android.util.Log;
+import es.enoler.consumer_producer.activities.MainActivity;
 
 public class Consumer extends Person {
 
@@ -15,6 +16,7 @@ public class Consumer extends Person {
 		return new android.os.Handler().postDelayed(new Runnable() {
 			public void run() {
 				Log.d("Test", "Removing item");
+				MainActivity.removeItem();
 				actionConsumer();
 			}
 		}, consumerActionTime);
