@@ -3,4 +3,5 @@
     <string name="action_settings">Settings</string>
     <string name="add_producer">Add producer</string>
     <string name="add_consumer">Add consumer</string>
+    <string name="number_producer">Created by producer:</string>
 </resources>
