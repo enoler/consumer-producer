@@ -4,8 +4,6 @@ package es.enoler.consumer_producer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.widget.Button;
-import androidx.test.annotation.UiThreadTest;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
