@@ -1,7 +1,6 @@
 package es.enoler.consumer_producer.activities;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 			Item item = new Item(mItemId, name, idProducer);
 			mItems.add(item);
 			mItemsAdapter.notifyDataSetChanged();
-			Log.d("Test", item.getName());
 		}
 	}
 
@@ -86,6 +84,5 @@ public class MainActivity extends AppCompatActivity {
 			mItems.remove(0);
 			mItemsAdapter.notifyDataSetChanged();
 		}
-		Log.d("Test", "Items: " + mItems.size());
 	}
 }
